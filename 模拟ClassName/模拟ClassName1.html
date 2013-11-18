@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script type="text/javascript">
+            window.onload=function(){
+                var tagName=getClass("div","a1");
+                for(var i=0;i < tagName.length;i++){
+                    tagName[i].innerHTML = "one";
+                }
+                var tagName = getClass("div","a2");
+                for(var i = 0;i < tagName.length;i++){
+                    tagName[i].innerHTML = "all";
+                }
+            }
+            function getClass(tagname,className){
+                if(document.getEementsByClassName){
+                    return getElementsByClassName(className);
+                }
+                else{
+                    var tagname=document.getElementsByTagName_a(tagname);
+                    var tagnameAll=[]
+                    for(var i = 0;i < tagname.length;i++){
+                        if(tagname[i].className == className){
+                            tagnameAll[tagnameAll.length]=tagname[i];
+                        }
+                    }
+                    return tagnameAll;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="a1"></div>
+        <div class="a1"></div>
+        <div class="a1"></div>
+        <div class="a1"></div>
+        <div class="a1"></div>
+        <div class="a1"></div>
+        <div class="a1"></div>
+        <div class="a1"></div>
+    </body>
+</html>
